@@ -4,12 +4,12 @@ from pydantic import BaseModel
 
 
 class TrainingResult(BaseModel):
-    message: str
+    best_score: float
 
 
 class ValidationResult(BaseModel):
-    score_mean: List[float]
-    score_std: List[float]
+    scores_mean: List[float]
+    scores_std: List[float]
     folds: int
     metrics: List[str]
     model: str

@@ -4,7 +4,7 @@ from app.core.config import DATA_MODEL_PATH
 from app.services.estimator import Estimator
 
 
-def startup_handler(app):
+def load_model(app):
     """Called on application start to load a local pickled model in memory, if it exists
 
     Args:
@@ -23,7 +23,7 @@ def startup_handler(app):
         logging.warning(f"No existing model found in {model_path}")
     
     
-def shutdown_handler(app):
+def unload_model(app):
     """Called on application shutdown to clean the context (close db connections, ...)
 
     Args:
@@ -32,3 +32,17 @@ def shutdown_handler(app):
     
     logging.info("Shuting down the app")
     app.state.model = None
+
+
+def startup_handler(app):
+    def startup():
+        load_model(app)
+
+    return startup
+
+
+def shutdown_handler(app):
+    def shutdown():
+        unload_model(app)
+
+    return shutdown

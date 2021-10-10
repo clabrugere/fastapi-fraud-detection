@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 from app.api.routes import prediction, train, validation
 from app.core.config import APP_NAME, APP_VERSION
-from app.core.event_handlers import shutdown_handler, startup_handler
+from app.core.events import shutdown_handler, startup_handler
 
 app = FastAPI(title=APP_NAME, version=APP_VERSION)
 
