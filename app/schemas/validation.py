@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class Validation(BaseModel):
+class ValidationResult(BaseModel):
     score_mean: float
     score_std: float
     folds: int

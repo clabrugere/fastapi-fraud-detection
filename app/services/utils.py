@@ -1,7 +1,7 @@
 import logging
 from fastapi import HTTPException, status
 import numpy as np
-from ..schemas import InputPayload, TargetPayload, Prediction, Validation
+from ..schemas import InputPayload, TargetPayload, ValidationResult, PredictionResult
 
 
 def check_model(model):
@@ -10,7 +10,7 @@ def check_model(model):
         raise HTTPException(status_code=404, detail="No model loaded on startup. Call /train before /predict.")
 
 
-def preprocess_predict_payload(input: InputPayload):
+def process_predict_payload(input: InputPayload):
     
     if input is None:
             raise ValueError(f"{input} is not a valid input")
@@ -20,7 +20,7 @@ def preprocess_predict_payload(input: InputPayload):
     return X
 
 
-def preprocess_validation_payload(input: InputPayload, target: TargetPayload = None):
+def process_validation_payload(input: InputPayload, target: TargetPayload = None):
     
     if input is None:
             raise ValueError(f"{input} is not a valid input")
@@ -33,12 +33,12 @@ def preprocess_validation_payload(input: InputPayload, target: TargetPayload = N
     return X, y
 
 
-def postprocess_prediction(predictions):
-    return Prediction(predictions)
+def process_prediction_result(predictions):
+    return PredictionResult(predictions)
 
 
-def postprocess_validation(scores, n_splits, metric, model_name):
-    return Validation(
+def process_validation_result(scores, n_splits, metric, model_name):
+    return ValidationResult(
         score_mean=np.mean(scores),
         score_std=np.mean(scores),
         folds=n_splits,

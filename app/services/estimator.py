@@ -29,7 +29,7 @@ class Estimator:
     def predict_proba(self, X):
         return self.model.predict_proba(X)
     
-    def validate(self, X, y, n_splits: int = 5):
+    def evaluate(self, X, y, n_splits: int = 5):
         
         scores = np.zeros(n_splits)
         model = clone(self.model)

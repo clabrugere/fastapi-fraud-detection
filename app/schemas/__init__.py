@@ -1,10 +1,10 @@
 from .payload import InputPayload, TargetPayload
-from .prediction import Prediction
-from .validation import Validation
+from .prediction import PredictionResult
+from .validation import ValidationResult
 
 __all__ = [
     "InputPayload",
     "TargetPayload",
-    "Prediction",
-    "Validation",
+    "PredictionResult",
+    "ValidationResult",
 ]
