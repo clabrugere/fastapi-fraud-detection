@@ -1,22 +1,23 @@
 import logging
 from starlette.requests import Request
-
 from fastapi import APIRouter
-from ...schemas import InputPayload, TargetPayload, Validation
-from ...services import utils
+from app.schemas import TrainingResult
+from app.core.config import DATA_MODEL_PATH, DATA_X_TRAIN_PATH, DATA_y_TRAIN_PATH
+from app.services import utils
 
 
 routeur = APIRouter()
 
-@routeur.post("/train", response_model=Validation, name="model_training")
-async def train(request: Request, input: InputPayload, target: TargetPayload):
+@routeur.get("/train", response_model=TrainingResult, name="model_training")
+async def train(request: Request):
     logging.info("/train endpoint call")
     
+    X, y = utils.fetch_training_data()
     model = request.app.state.model
-    utils.check_model(model)
+    model.fit(X, y)
+    model.save(DATA_MODEL_PATH)
+    request.app.state.model = model
     
-    X, y = utils.preprocess_validation_payload(input, target)
-    scores, n_splits, metric, model_name = model.validat(X, y)
-    result = utils.postprocess_validation(scores, n_splits, metric, model_name)
+    result = utils.process_training_result("model trained successfully")
     
     return result

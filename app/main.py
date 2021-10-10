@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from .core.config import APP_NAME, APP_VERSION
-from .core.event_handlers import startup_handler, shutdown_handler
-from .api.routes import train, prediction, validation
+from app.core.config import APP_NAME, APP_VERSION
+from app.core.event_handlers import startup_handler, shutdown_handler
+from app.api.routes import train, prediction, validation
 
 
 app = FastAPI(title=APP_NAME, version=APP_VERSION)

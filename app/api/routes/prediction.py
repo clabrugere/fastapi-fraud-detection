@@ -2,8 +2,8 @@ import logging
 from starlette.requests import Request
 
 from fastapi import APIRouter
-from ...schemas import InputPayload, PredictionResult
-from ...services import utils
+from app.schemas import InputPayload, PredictionResult
+from app.services import utils
 
 
 routeur = APIRouter()
