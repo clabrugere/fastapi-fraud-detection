@@ -1,6 +1,6 @@
-from payload import InputPayload, TargetPayload
-from output import TrainingResult, PredictionResult, ValidationResult
 from file import InputFile, InputTarget
+from output import PredictionResult, TrainingResult, ValidationResult
+from payload import InputPayload, TargetPayload
 
 __all__ = [
     "InputFile", 

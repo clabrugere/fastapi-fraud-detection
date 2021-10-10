@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 APP_VERSION = "0.1"
 APP_NAME = "fraud-detection"
 

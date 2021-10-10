@@ -1,10 +1,10 @@
 import logging
-from starlette.requests import Request
-from fastapi import APIRouter
-from app.schemas import TrainingResult
-from app.core.config import DATA_MODEL_PATH, DATA_X_TRAIN_PATH, DATA_y_TRAIN_PATH
-from app.services import utils
 
+from app.core.config import DATA_MODEL_PATH
+from app.schemas import TrainingResult
+from app.services import utils
+from fastapi import APIRouter
+from starlette.requests import Request
 
 routeur = APIRouter()
 

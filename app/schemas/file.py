@@ -1,6 +1,7 @@
 import pandera as pa
 from pandera.typing import Series
 
+
 class InputFile(pa.SchemaModel):
     col_0: Series[float]
     col_1: Series[float]

@@ -1,9 +1,10 @@
-from fastapi import HTTPException, status
 import numpy as np
 import pandas as pd
-
-from app.core.config import DATA_X_TEST_PATH, DATA_X_TRAIN_PATH, DATA_y_TEST_PATH, DATA_y_TRAIN_PATH
-from app.schemas import InputPayload, TrainingResult, ValidationResult, PredictionResult, InputFile, InputTarget
+from app.core.config import (DATA_X_TEST_PATH, DATA_X_TRAIN_PATH,
+                             DATA_y_TEST_PATH, DATA_y_TRAIN_PATH)
+from app.schemas import (InputFile, InputPayload, InputTarget,
+                         PredictionResult, TrainingResult, ValidationResult)
+from fastapi import HTTPException, status
 
 
 def check_model(model):

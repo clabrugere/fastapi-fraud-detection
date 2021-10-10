@@ -1,10 +1,9 @@
 import logging
-from starlette.requests import Request
 
-from fastapi import APIRouter
 from app.schemas import ValidationResult
 from app.services import utils
-
+from fastapi import APIRouter
+from starlette.requests import Request
 
 routeur = APIRouter()
 

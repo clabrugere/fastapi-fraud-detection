@@ -1,6 +1,8 @@
 import logging
+
 from app.core.config import DATA_MODEL_PATH
 from app.services.estimator import Estimator
+
 
 def startup_handler(app):
     """Called on application start to load a local pickled model in memory, if it exists
