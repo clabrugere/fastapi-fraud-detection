@@ -26,8 +26,8 @@ The business problem used as an example is about fraud detection in banking tran
 transactions records described by 112 numerical features that are anonymized, and the goal is to predict a binary outcome
 of either a transaction is fraudulent or legit, and hence is a binary classification problem.
 
-In this case, the objective is to maximize the recall (tp / (tp + fn)) as we can to find a maximum amount of fraudulent 
-transactions as true positives are more important than false positives.
+In this case, the objective is to maximize the recall (tp / (tp + fn)) as we want to find the maximum amount of fraudulent 
+transactions, true positives being more important than false positives.
 
 ## How to use
 
