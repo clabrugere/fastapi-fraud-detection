@@ -8,4 +8,4 @@ DATA_y_TRAIN_PATH = r"https://raw.githubusercontent.com/clabrugere/fastapi-fraud
 DATA_X_VAL_PATH = r"https://raw.githubusercontent.com/clabrugere/fastapi-fraud-detection/main/data/X_val.csv"
 DATA_y_VAL_PATH = r"https://raw.githubusercontent.com/clabrugere/fastapi-fraud-detection/main/data/y_val.csv"
 
-DATA_MODEL_PATH = Path(r"app/static/model.pkl")
+DATA_MODEL_PATH = Path(r"app/artifacts/model.pkl")
