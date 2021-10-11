@@ -55,7 +55,7 @@ docker build -t fastapi-fraud-detection .
 Start the container
 
 ```
-docker run -d --name fastapi-fraud-detection-instane -p 80:80 fastapi-fraud-detection
+docker run -d --name fastapi-fraud-detection-instance -p 80:80 fastapi-fraud-detection
 ```
 
 ## Acknowledgements
