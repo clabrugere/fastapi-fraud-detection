@@ -1,10 +1,19 @@
+from typing import Tuple, List
+
 import numpy as np
-from sklearn.base import clone
+from sklearn.base import clone, BaseEstimator
 from sklearn.metrics import precision_score, recall_score, roc_auc_score
 from sklearn.model_selection import StratifiedKFold
 
 
-def validate(model, X: np.ndarray, y: np.ndarray, n_splits: int = 5, proba_threshold: float = .5):
+def validate(
+        model: BaseEstimator,
+        X: np.ndarray,
+        y: np.ndarray,
+        n_splits: int = 5,
+        proba_threshold: float = .5
+) -> Tuple[np.ndarray, int, List[str], str]:
+
     metrics = ["precision", "recall", "roc_auc"]
 
     scores = np.zeros((n_splits, len(metrics)))
