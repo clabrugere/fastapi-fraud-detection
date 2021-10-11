@@ -3,7 +3,7 @@ from app.schemas.output import PredictionResult, TrainingResult, ValidationResul
 from app.schemas.payload import InputPayload, TargetPayload
 
 __all__ = [
-    "InputFile", 
+    "InputFile",
     "InputTarget",
     "InputPayload",
     "TargetPayload",

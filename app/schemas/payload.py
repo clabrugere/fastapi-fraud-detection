@@ -121,6 +121,6 @@ class Sample(BaseModel):
 class InputPayload(BaseModel):
     samples: List[Sample]
 
-    
+
 class TargetPayload(BaseModel):
     target: List[float]
