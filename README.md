@@ -1,5 +1,7 @@
 # Fraud detection model with FastAPI
 
+![API doc](data/screenshot.png "API doc")
+
 This project is an example of a fully packaged machine learning model that can be readily deployed in any computing
 environment:
 
