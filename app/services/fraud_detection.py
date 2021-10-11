@@ -8,7 +8,7 @@ from sklearn.model_selection import StratifiedKFold, RandomizedSearchCV
 
 class FraudDetection(BaseEstimator):
 
-    def __init__(self, path=None):
+    def __init__(self, path=None) -> None:
         self.path = path
 
         if self.path is not None:
@@ -18,7 +18,7 @@ class FraudDetection(BaseEstimator):
 
         self.best_score = None
 
-    def __str__(self):
+    def __str__(self) -> str:
         if self.path is not None:
             return self.path.name
         else:
